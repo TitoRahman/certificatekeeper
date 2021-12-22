@@ -11,8 +11,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         Handler().postDelayed({
-            val logInIntent = Intent(this@MainActivity, Register::class.java)
+            val logInIntent = Intent(this@MainActivity, LoginRegister::class.java)
             startActivity(logInIntent)
-        }, 3000)
+        }, 1000)
     }
 }
