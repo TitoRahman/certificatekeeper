@@ -4,15 +4,16 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Handler().postDelayed({
-            val logInIntent = Intent(this@MainActivity, LoginRegister::class.java)
+        Handler(Looper.getMainLooper()).postDelayed({
+            val logInIntent = Intent(this@MainActivity, demo::class.java)
             startActivity(logInIntent)
-        }, 1000)
+        }, 400)
     }
 }
