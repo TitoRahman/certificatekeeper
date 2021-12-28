@@ -10,18 +10,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Certificatekeeper">
         <activity
+            android:name=".CertivicateView"
+            android:exported="false" />
+        <activity
+            android:name=".demo"
+            android:exported="false" />
+        <activity
             android:name=".Home"
             android:exported="false"
-            android:label="Home"/>
+            android:label="Home"
+            android:theme="@style/Theme.Certificatekeeper.NoActionBar"/>
         <activity
             android:name=".FileExplorer"
             android:exported="false" />
         <activity
             android:name=".Profile"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Certificatekeeper.NoActionBar"/>
         <activity
             android:name=".LoginRegister"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Certificatekeeper.NoActionBar"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
