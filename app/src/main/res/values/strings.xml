@@ -4,4 +4,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="filter_1">Filter 1</string>
     <string name="tools_placeholder">Tools Placeholder</string>
+    <string name="welcome_back">Welcome Back !</string>
+    <string name="user">User</string>
+    <string name="explore_your_certificate">EXPLORE YOUR CERTIFICATE</string>
+    <string name="upload_your_certificate">UPLOAD YOUR CERTIFICATE</string>
+    <string name="recently_open">RECENTLY OPEN</string>
 </resources>
