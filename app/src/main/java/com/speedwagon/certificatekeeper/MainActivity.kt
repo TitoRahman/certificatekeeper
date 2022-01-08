@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val logInIntent = Intent(this@MainActivity, demo::class.java)
+            val logInIntent = Intent(this@MainActivity, Demo::class.java)
             startActivity(logInIntent)
         }, 400)
     }

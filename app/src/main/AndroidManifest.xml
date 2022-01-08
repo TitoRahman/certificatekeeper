@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.speedwagon.certificatekeeper">
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Certificatekeeper.NoActionBar">
+        android:theme="@style/Theme.Certificatekeeper.NoActionBar"
+        android:fullBackupContent="true">
         <activity
-            android:name=".CertivicateView"
+            android:name=".CertificateView"
             android:exported="false" />
         <activity
-            android:name=".demo"
+            android:name=".Demo"
             android:exported="false" />
         <activity
             android:name=".Home"
