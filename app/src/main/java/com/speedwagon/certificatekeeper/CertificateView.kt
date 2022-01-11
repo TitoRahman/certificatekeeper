@@ -3,6 +3,8 @@ package com.speedwagon.certificatekeeper
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.Toast
+import androidx.core.view.get
 import androidx.recyclerview.widget.RecyclerView
 
 class CertificateView : AppCompatActivity() {
@@ -21,8 +23,9 @@ class CertificateView : AppCompatActivity() {
             Option(title = "Rename"),
             Option(title = "Protect")
         )
-
+        val tool = findViewById<RecyclerView>(R.id.rvToolList)
         val toolAdapter = optionAdapter(toolList)
-        findViewById<RecyclerView>(R.id.rvToolList).adapter = toolAdapter
+        tool.adapter = toolAdapter
+
     }
 }
