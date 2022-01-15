@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Certificatekeeper">
         <activity
-            android:name=".CertivicateView"
+            android:name=".CertificateView"
             android:exported="false" />
         <activity
-            android:name=".demo"
+            android:name=".Demo"
             android:exported="false" />
         <activity
             android:name=".Home"
