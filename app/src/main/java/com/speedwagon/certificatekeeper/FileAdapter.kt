@@ -49,7 +49,12 @@ class FileAdapter (
 
             } else
             {
-                Toast.makeText(holder.itemView.context, "${selectedFile.name} opened!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(holder.itemView.context, "Opening File", Toast.LENGTH_SHORT).show()
+                val certView = Intent(holder.itemView.context, CertificateView::class.java)
+                val path : String = selectedFile.absolutePath
+                certView.putExtra("path", path)
+                certView.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                context.startActivity(certView)
             }
         }
 

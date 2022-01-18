@@ -26,7 +26,6 @@ class FileExplorer : AppCompatActivity() {
         val path : String = intent.getStringExtra("Path").toString()
         val currentPath = File(path)
         val certAndFolderList = currentPath.listFiles()
-        //Toast.makeText(this, "the path is $path", Toast.LENGTH_SHORT).show()
         if (certAndFolderList == null)
         {
             noItemFound.visibility = View.VISIBLE

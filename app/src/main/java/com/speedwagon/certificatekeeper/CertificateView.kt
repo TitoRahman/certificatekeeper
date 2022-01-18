@@ -3,8 +3,6 @@ package com.speedwagon.certificatekeeper
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.Toast
-import androidx.core.view.get
 import androidx.recyclerview.widget.RecyclerView
 
 class CertificateView : AppCompatActivity() {
@@ -12,19 +10,18 @@ class CertificateView : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_certivicate_view)
 
-        // Back Button
+        // Button Event Listener
         findViewById<ImageView>(R.id.goBack).setOnClickListener { finish() }
-
+        findViewById<ImageView>(R.id.Edit).setOnClickListener{finish()}
         // Tool List
         val toolList = mutableListOf(
-            Option(title = "Contrast"),
-            Option(title = "Crop"),
-            Option(title = "W/B"),
-            Option(title = "Rename"),
-            Option(title = "Protect")
+            Option(toolTitle = "Contrast", toolIcon = R.drawable.ic_contrast),
+            Option(toolTitle = "Crop", toolIcon =  R.drawable.ic_crop),
+            Option(toolTitle = "Rename", toolIcon =  R.drawable.ic_rename),
+            Option(toolTitle = "Lock", toolIcon =  R.drawable.ic_lock)
         )
         val tool = findViewById<RecyclerView>(R.id.rvToolList)
-        val toolAdapter = optionAdapter(toolList)
+        val toolAdapter = OptionAdapter(toolList)
         tool.adapter = toolAdapter
 
     }

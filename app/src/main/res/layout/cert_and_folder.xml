@@ -12,7 +12,8 @@
         android:layout_height="36dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_folder" />
+        tools:src="@drawable/ic_folder"
+        app:tint="@color/Blue_1" />
 
     <TextView
         android:id="@+id/folderTitle"
@@ -20,5 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/fileIV"
         android:padding="5dp"
-        android:text="Document"/>
+        android:text="Document"
+        android:textColor="@color/black"
+        android:textFontWeight="800" />
 </RelativeLayout>
