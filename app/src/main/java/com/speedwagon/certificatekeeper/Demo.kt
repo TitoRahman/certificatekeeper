@@ -28,7 +28,7 @@ class Demo : AppCompatActivity() {
         findViewById<Button>(R.id.toFileExplorer).setOnClickListener{
             val fileExplorerIntent = Intent(this, FileExplorer::class.java)
             val path : File? = getExternalFilesDir(null)
-            Toast.makeText(this, "Current dir is ${path.toString()}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Opening File Explorer", Toast.LENGTH_SHORT).show()
             fileExplorerIntent.putExtra("path", path)
             if (!checkPermission())
                 requestPermission()

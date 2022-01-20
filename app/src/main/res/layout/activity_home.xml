@@ -197,6 +197,7 @@
                                 android:focusable="true"
                                 app:cardCornerRadius="10dp">
                                 <ImageView
+                                    android:id="@+id/openFolder"
                                     android:layout_width="match_parent"
                                     android:layout_height="50dp"
                                     android:src="@drawable/folder_containing" />

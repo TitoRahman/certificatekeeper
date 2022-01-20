@@ -3,6 +3,7 @@ package com.speedwagon.certificatekeeper
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.media.Image
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,6 +14,8 @@ import java.io.File
 import android.os.StatFs
 import android.provider.MediaStore
 import android.view.View
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -37,6 +40,17 @@ class Home : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
 
+        // Open File Explorer
+        findViewById<ImageView>(R.id.openFolder).setOnClickListener{
+            val fileExplorerIntent = Intent(this, FileExplorer::class.java)
+            val path : File? = getExternalFilesDir(null)
+            Toast.makeText(this, "Opening File Explorer", Toast.LENGTH_SHORT).show()
+            fileExplorerIntent.putExtra("path", path)
+            if (!checkPermission())
+                requestPermission()
+            else
+                startActivity(fileExplorerIntent)
+        }
 
         // TextView to show information
         val mTextView= findViewById<TextView>(R.id.internalmemori)
@@ -129,4 +143,21 @@ class Home : AppCompatActivity() {
         }
     }
 
+    private fun requestPermission()
+    {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE))
+        {
+            Toast.makeText(this, "Storage Permission is Required, Please allow in Setting", Toast.LENGTH_SHORT).show()
+        }
+        ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE), 1)
+    }
+
+    private fun checkPermission() : Boolean
+    {
+        val permissionIsGranted = ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        if (permissionIsGranted == PackageManager.PERMISSION_GRANTED) {
+            return true
+        }
+        return false
+    }
 }
