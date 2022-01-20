@@ -1,5 +1,6 @@
 package com.speedwagon.certificatekeeper
 
+import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
@@ -10,6 +11,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import java.io.File
 import android.os.StatFs
+import android.provider.MediaStore
 import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
@@ -55,7 +57,8 @@ class Home : AppCompatActivity() {
         // TextView to show information for external memory
         val eTextView= findViewById<TextView>(R.id.sdcard)
 
-        val statFs = StatFs(Environment.getExternalStorageDirectory().absolutePath)
+        val sPath: File? = Environment.getExternalStorageDirectory()
+        val statFs = StatFs(sPath?.path)
         val blockSize = statFs.blockSizeLong
         val totalSize = statFs.blockCountLong * blockSize
         val availableSize = formatSize(statFs.availableBlocksLong * blockSize)
@@ -96,6 +99,7 @@ class Home : AppCompatActivity() {
         startActivity(intentprofile)
     }
 
+
     fun init(){
         recyclerView = findViewById(R.id.recently)
 
@@ -103,9 +107,26 @@ class Home : AppCompatActivity() {
         data.add(recentlyfile(R.drawable.dokumen, "File 1"))
         data.add(recentlyfile(R.drawable.dokumen, "File 2"))
         data.add(recentlyfile(R.drawable.dokumen, "File 3"))
-
         adapter = RecentlyAdapter(data)
+    }
 
+    fun opencamera(view: View){
+        camerapermission()
+        val intent = Intent("android.media.action.IMAGE_CAPTURE")
+        startActivity(intent)
+    }
+
+    fun camerapermission(){
+        var permission = arrayOf(android.Manifest.permission.CAMERA)
+        var needpermission : ArrayList<String> = ArrayList()
+        for (i in permission){
+            if(ContextCompat.checkSelfPermission(this@Home,i)!= PackageManager.PERMISSION_GRANTED){
+                needpermission.add(i)
+            }
+        }
+        if (!needpermission.isEmpty()){
+            ActivityCompat.requestPermissions(this, needpermission.toArray(arrayOfNulls(needpermission.size)),123)
+        }
     }
 
 }

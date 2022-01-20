@@ -8,14 +8,14 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Home"
         android:background="#3548B3"
-        android:theme="@style/Theme.Certificatekeeper.NoActionBar">
+        android:theme="@style/Theme.Certificatekeeper.NoActionBar"
+        tools:context=".Home">
 
         <GridLayout
             android:id="@+id/gridLayout5"
-            android:layout_width="411dp"
-            android:layout_height="205dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -32,11 +32,11 @@
                 <ImageView
                     android:id="@+id/imageView4"
                     android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_height="148dp"
                     android:layout_row="1"
                     android:layout_column="0"
                     android:layout_gravity="center"
-                    android:src="@drawable/profile2"/>
+                    android:src="@drawable/profile2" />
             </androidx.cardview.widget.CardView>
 
             <TextView
@@ -44,19 +44,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="2"
+                android:layout_marginTop="10dp"
                 android:layout_column="0"
                 android:layout_gravity="center"
                 android:text="User"
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="1"
-                android:layout_column="0" />
 
             <ImageView
                 android:id="@+id/back"
@@ -66,16 +60,13 @@
                 android:layout_column="0"
                 android:layout_margin="15dp"
                 android:src="@drawable/ic_back"
-                app:tint="@color/white"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true"
-                android:focusable="true"/>
+                app:tint="@color/white" />
         </GridLayout>
 
         <GridLayout
             android:id="@+id/gridLayout2"
             android:layout_width="match_parent"
-            android:layout_height="510dp"
+            android:layout_height="468dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.333"
