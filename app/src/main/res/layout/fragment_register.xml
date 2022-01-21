@@ -5,7 +5,6 @@
     android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_colour"
     tools:context=".Register">
 
     <EditText
@@ -15,7 +14,9 @@
         android:background="@drawable/round_border"
         android:ems="10"
         android:hint="USERNAME"
+        android:textColorHint="@color/Blue_1"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +32,9 @@
         android:background="@drawable/round_border"
         android:ems="10"
         android:hint="EMAIL"
+        android:textColorHint="@color/Blue_1"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,12 +44,13 @@
         app:layout_constraintVertical_bias="0.499" />
 
     <EditText
-        android:id="@+id/inputPasswordRegister"
+        android:id="@+id/inputPassword"
         android:layout_width="340dp"
         android:layout_height="50dp"
         android:background="@drawable/round_border"
         android:ems="10"
         android:hint="PASSWORD"
+        android:textColorHint="@color/Blue_1"
         android:inputType="textPassword"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -85,21 +89,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.798" />
 
-    <EditText
+    <Button
         android:id="@+id/toLogin"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:backgroundTint="#00FFFFFF"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
         android:text="LOG IN"
-        android:textAlignment="center"
-        android:textColor="#FBFAFA"
-        android:textStyle="bold"
+        android:textColor="#FDFBFB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.863" />
+        app:layout_constraintVertical_bias="0.86" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
