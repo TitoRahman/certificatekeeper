@@ -16,14 +16,16 @@
 
         <ImageView
             android:id="@+id/itemImage"
-            android:layout_width="@dimen/_70sdp"
-            android:layout_height="@dimen/_70sdp"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
             android:contentDescription="@string/tools_placeholder"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/filter_item_placeholder"
-            tools:ignore="ImageContrastCheck" />
+            tools:ignore="ImageContrastCheck"
+            app:tint="@color/Blue_1" />
+
 
         <TextView
             android:id="@+id/itemTitle"

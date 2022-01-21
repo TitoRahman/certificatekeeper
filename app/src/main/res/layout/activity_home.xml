@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,46 +13,18 @@
         android:background="#f3f3f3"
         android:theme="@style/Theme.Certificatekeeper.NoActionBar">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/welcome_back"
-            android:textColor="#425CBC"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.045"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textStyle="bold"
-            app:layout_constraintVertical_bias="0.035" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/user"
-            android:textColor="#425CBC"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.036"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.075" />
 
         <GridLayout
             android:id="@+id/gridLayout"
-            android:layout_width="410dp"
-            android:layout_height="147dp"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
             android:columnCount="2"
             android:rowCount="3"
-            app:layout_constraintBottom_toTopOf="@+id/gridLayout3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.825">
+            app:layout_constraintTop_toBottomOf="@+id/gridLayout4">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="175dp"
@@ -59,9 +32,52 @@
                 android:layout_row="0"
                 android:layout_column="0"
                 android:layout_gravity="fill"
-                android:layout_margin="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
                 app:cardCornerRadius="15dp"
-                app:cardElevation="8dp" />
+                app:cardElevation="8dp">
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="59dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/internal_memori" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/internalmemori"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="10dp"
+                            android:textColor="#16236A"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:text="Internal Memory"
+                            android:textColor="#FF425CBC"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </GridLayout>
+
+
+            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="160dp"
@@ -71,21 +87,61 @@
                 android:layout_gravity="fill"
                 android:layout_margin="15dp"
                 app:cardCornerRadius="15dp"
-                app:cardElevation="8dp" />
+                app:cardElevation="8dp">
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/sd_card" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/sdcard"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="10dp"
+                            android:textColor="#16236A"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SD Card"
+                            android:textColor="#FF425CBC"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </GridLayout>
+
+
+            </androidx.cardview.widget.CardView>
         </GridLayout>
 
         <GridLayout
             android:id="@+id/gridLayout3"
             android:layout_width="match_parent"
-            android:layout_height="475dp"
+            android:layout_height="wrap_content"
             android:columnCount="2"
             android:rowCount="3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0">
+            app:layout_constraintTop_toBottomOf="@+id/gridLayout"
+            app:layout_constraintVertical_bias="0.0">
 
 
             <androidx.cardview.widget.CardView
@@ -95,13 +151,13 @@
                 android:layout_column="1"
                 android:layout_margin="10dp"
                 app:cardCornerRadius="15dp"
-                app:cardElevation="15dp"
+                app:cardElevation="5dp"
 
                 >
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
 
                     <TextView
@@ -117,19 +173,44 @@
 
                     <GridLayout
                         android:layout_width="match_parent"
-                        android:layout_height="90dp">
+                        android:layout_height="85dp">
 
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/explorefile"
-                            android:layout_width="98dp"
+                        <LinearLayout
+                            android:layout_width="100dp"
                             android:layout_height="match_parent"
-                            android:layout_row="0"
-                            android:layout_column="0"
-                            android:layout_margin="5dp"
-                            android:layout_marginLeft="20dp"
-                            app:cardBackgroundColor="#A8B4E3"
-                            app:cardElevation="15dp" />
+                            android:orientation="vertical"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="5dp"
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/explorefile"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:layout_row="0"
+                                android:layout_column="0"
+                                android:layout_margin="5dp"
+                                app:cardBackgroundColor="#FFFFFF"
+                                app:cardElevation="5dp"
+                                android:foreground="?android:attr/selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                app:cardCornerRadius="10dp">
+                                <ImageView
+                                    android:id="@+id/openFolder"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:src="@drawable/folder_containing" />
+                            </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Open Folder"
+                                android:textStyle="bold"
+                                android:textColor="#FF425CBC"
+                                android:textAlignment="center"/>
+
+                        </LinearLayout>
                     </GridLayout>
 
                     <TextView
@@ -145,37 +226,106 @@
 
                     <GridLayout
                         android:layout_width="match_parent"
-                        android:layout_height="100dp">
+                        android:layout_height="86dp">
 
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="98dp"
+                        <LinearLayout
+                            android:layout_width="100dp"
                             android:layout_height="match_parent"
-                            android:layout_row="0"
-                            android:layout_column="0"
-                            android:layout_margin="5dp"
-                            android:layout_marginLeft="20dp"
-                            app:cardBackgroundColor="#A8B4E3"
-                            app:cardElevation="15dp" />
+                            android:orientation="vertical"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="5dp">
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:layout_row="0"
+                                android:layout_column="0"
+                                android:layout_margin="5dp"
+                                app:cardCornerRadius="10dp"
+                                android:foreground="?android:attr/selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                app:cardBackgroundColor="#FFFFFF"
+                                app:cardElevation="5dp">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:src="@drawable/cloud"
+                                    />
+                            </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Cloud Storage"
+                                android:textStyle="bold"
+                                android:textAlignment="center"
+                                android:textColor="#FF425CBC"/>
+                        </LinearLayout>
 
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="98dp"
+                        <LinearLayout
+                            android:layout_width="100dp"
                             android:layout_height="match_parent"
-                            android:layout_row="0"
-                            android:layout_column="1"
-                            android:layout_margin="5dp"
-                            android:layout_marginLeft="20dp"
-                            app:cardBackgroundColor="#A8B4E3"
-                            app:cardElevation="15dp" />
+                            android:orientation="vertical"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="5dp">
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:layout_row="0"
+                                android:layout_column="0"
+                                android:layout_margin="5dp"
+                                app:cardCornerRadius="10dp"
+                                android:foreground="?android:attr/selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                app:cardBackgroundColor="#FFFFFF"
+                                app:cardElevation="5dp">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:onClick="opencamera"
+                                    android:src="@drawable/camera"
+                                    />
+                            </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Open Camera"
+                                android:textAlignment="center"
+                                android:textStyle="bold"
+                                android:textColor="#FF425CBC"/>
+                        </LinearLayout>
 
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="98dp"
+                        <LinearLayout
+                            android:layout_width="110dp"
                             android:layout_height="match_parent"
-                            android:layout_row="0"
-                            android:layout_column="2"
-                            android:layout_margin="5dp"
-                            android:layout_marginLeft="20dp"
-                            app:cardBackgroundColor="#A8B4E3"
-                            app:cardElevation="15dp" />
+                            android:orientation="vertical"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="5dp">
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:layout_row="0"
+                                android:layout_column="0"
+                                android:layout_margin="5dp"
+                                app:cardCornerRadius="10dp"
+                                android:foreground="?android:attr/selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                app:cardBackgroundColor="#FFFFFF"
+                                app:cardElevation="5dp">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="53dp"
+                                    android:src="@drawable/dokumen" />
+                            </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Open Document"
+                                android:textStyle="bold"
+                                android:textColor="#FF425CBC"/>
+                        </LinearLayout>
                     </GridLayout>
 
                     <TextView
@@ -188,6 +338,13 @@
                         android:text="@string/recently_open"
                         android:textColor="#425CBC"
                         android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/recently">
+
+                    </androidx.recyclerview.widget.RecyclerView>
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -195,24 +352,68 @@
         </GridLayout>
 
         <GridLayout
+            android:id="@+id/gridLayout4"
             android:layout_width="match_parent"
-            android:layout_height="90dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="80dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.333"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_column="0">
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/welcome_back"
+                    android:textColor="#425CBC"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintVertical_bias="0.035" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user"
+                    android:textColor="#425CBC"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"/>
+
+            </LinearLayout>
+
 
             <androidx.cardview.widget.CardView
                 android:layout_width="67dp"
                 android:layout_height="match_parent"
-                android:layout_row="3"
-                android:layout_column="1"
-                android:layout_margin="13dp"
-                app:cardCornerRadius="100dp"
-                app:cardElevation="15dp"
-                app:cardBackgroundColor="#425CBC"/>
+                android:layout_row="0"
+                android:layout_column="2"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                app:cardBackgroundColor="#425CBC"
+                app:cardCornerRadius="150dp"
+                app:cardElevation="5dp"
+                >
+
+                <ImageView
+                    android:id="@+id/Profile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/profile2"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="Openprofile"
+                    />
+            </androidx.cardview.widget.CardView>
         </GridLayout>
 
 
