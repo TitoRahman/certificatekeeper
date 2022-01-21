@@ -43,9 +43,8 @@ class Home : AppCompatActivity() {
         // Open File Explorer
         findViewById<ImageView>(R.id.openFolder).setOnClickListener{
             val fileExplorerIntent = Intent(this, FileExplorer::class.java)
-            val path : File? = getExternalFilesDir(null)
-            Toast.makeText(this, "Opening File Explorer", Toast.LENGTH_SHORT).show()
-            fileExplorerIntent.putExtra("path", path)
+            val path : String = Environment.getExternalStorageDirectory().toString()
+            fileExplorerIntent.putExtra("Path", path)
             if (!checkPermission())
                 requestPermission()
             else
