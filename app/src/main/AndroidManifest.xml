@@ -13,7 +13,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Certificatekeeper">
+        android:theme="@style/Theme.Certificatekeeper.NoActionBar"
+        android:requestLegacyExternalStorage="true"
+        android:fullBackupContent="true">
         <activity
             android:name=".CertificateView"
             android:exported="false" />

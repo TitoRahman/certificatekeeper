@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Environment.getExternalStorageDirectory
 import android.widget.Button
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -27,9 +28,8 @@ class Demo : AppCompatActivity() {
         }
         findViewById<Button>(R.id.toFileExplorer).setOnClickListener{
             val fileExplorerIntent = Intent(this, FileExplorer::class.java)
-            val path : File? = getExternalFilesDir(null)
-            Toast.makeText(this, "Opening File Explorer", Toast.LENGTH_SHORT).show()
-            fileExplorerIntent.putExtra("path", path)
+            val path : String = getExternalStorageDirectory().toString()
+            fileExplorerIntent.putExtra("Path", path)
             if (!checkPermission())
                 requestPermission()
             else

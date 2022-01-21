@@ -5,9 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.speedwagon.certificatekeeper.databinding.OptionItemBinding
 
-class optionAdapter (
+class OptionAdapter (
     var optionList : List<Option>
-    ) : RecyclerView.Adapter<optionAdapter.CVHolder>() {
+    ) : RecyclerView.Adapter<OptionAdapter.CVHolder>() {
     inner class CVHolder(val binding: OptionItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CVHolder {
@@ -22,7 +22,8 @@ class optionAdapter (
 
     override fun onBindViewHolder(holder: CVHolder, position: Int) {
         holder.binding.apply {
-            itemTitle.text = optionList[position].title
+            itemTitle.text = optionList[position].toolTitle
+            itemImage.setImageResource(optionList[position].toolIcon)
         }
     }
 
